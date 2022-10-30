@@ -1,13 +1,14 @@
 .promo {
   background: var(--primary-background);
-  padding-top: 80px;
+  padding-top: 20px;
 
   &__content {
     display: grid;
     gap: 167px 250px;
-    grid-template-rows: repeat(2, auto);
-    grid-template-columns: repeat(2, auto);
+    grid-template-rows: 442px auto;
+    grid-template-columns: 460px auto;
     align-items: start;
+    justify-content: start;
   }
 
   &__text {
@@ -15,6 +16,7 @@
     flex-direction: column;
     justify-content: flex-start;
     gap: 50px;
+    margin-top: 60px;
   }
 
   &__description {
@@ -67,9 +69,6 @@
   &__road-image {
     width: 610px;
     height: 836px;
-    position: relative;
-    top: 0;
-    left: 120px;
     grid-row: 1 / -1;
     grid-column: 2;
   }
@@ -82,5 +81,28 @@
     color: var(--primary-text);
     margin: 0;
     padding: 0;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      background: #d7d4d4;
+      content: "";
+      height: 2px;
+      right: calc(132px/2 + 30px);
+      position: absolute;
+      top: 9px;
+      width: 132px;
+    }
+  }
+
+  &__bike-image {
+    background: #f4f4f4 url("../images/bikes/cannondale-systemsix-himod.jpg") no-repeat center center;
+    box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+    border-radius: 20px;
+    width: 440px;
+    height: 300px;
+    position: absolute;
+    top: 470px;
+    left: 665px;
   }
 }
