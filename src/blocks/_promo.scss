@@ -1,0 +1,108 @@
+.promo {
+  background: var(--primary-background);
+  padding-top: 20px;
+
+  &__content {
+    display: grid;
+    gap: 167px 250px;
+    grid-template-rows: 442px auto;
+    grid-template-columns: 460px auto;
+    align-items: start;
+    justify-content: start;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 50px;
+    margin-top: 60px;
+  }
+
+  &__description {
+    color: var(--secondary-text);
+    font-family: $font-stack;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    margin: 0;
+    max-width: 460px;
+    opacity: $secondary-text-opacity;
+    padding: 0;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &__link {
+    align-items: center;
+    background: linear-gradient(
+        to right,
+        rgb(49, 158, 117) 0%,
+        rgb(49, 158, 117) 50%,
+        rgb(36, 180, 126) 50%,
+        rgb(36, 180, 126) 100%
+    ) top right;
+    background-size: 200% 100%;
+    border-radius: 4px;
+    color: #fff;
+    display: flex;
+    font-family: $font-stack;
+    font-size: 14px;
+    font-weight: 600;
+    height: 50px;
+    justify-content: center;
+    letter-spacing: 1px;
+    line-height: 18px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s linear;
+    width: 180px;
+
+    &:hover {
+      background-position: top left;
+    }
+  }
+
+  &__road-image {
+    width: 610px;
+    height: 836px;
+    grid-row: 1 / -1;
+    grid-column: 2;
+  }
+
+  &__bike-name {
+    font-family: $font-stack;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    color: var(--primary-text);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      background: #d7d4d4;
+      content: "";
+      height: 2px;
+      right: calc(132px/2 + 30px);
+      position: absolute;
+      top: 9px;
+      width: 132px;
+    }
+  }
+
+  &__bike-image {
+    background: #f4f4f4 url("../images/bikes/cannondale-systemsix-himod.jpg") no-repeat center center;
+    box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+    border-radius: 20px;
+    width: 440px;
+    height: 300px;
+    position: absolute;
+    top: 470px;
+    left: 665px;
+  }
+}
