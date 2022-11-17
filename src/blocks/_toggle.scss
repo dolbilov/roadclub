@@ -1,0 +1,59 @@
+@import "../abstracts/variables";
+
+.toggle {
+  align-items: center;
+  display: flex;
+  gap: 22px;
+  justify-content: flex-start;
+
+  &__sun-icon,
+  &__moon-icon {
+    color: var(--toggle-icons-color);
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    height: 28px;
+  }
+
+  &__invisible-checkbox {
+    clip: rect(0 0 0 0);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    z-index: -100;
+
+    &:checked ~ .toggle__visible-checkbox {
+      background: #545454;
+
+      &::after {
+        transform: translate($toggle-height);
+      }
+    }
+  }
+
+  &__visible-checkbox {
+    background: #fff;
+    border-radius: $toggle-border-radius;
+    cursor: pointer;
+    display: inline-block;
+    height: $toggle-height;
+    position: relative;
+    transition: background 0.2s;
+    width: $toggle-width;
+
+    &::after {
+      background: #24b47e;
+      border-radius: $toggle-border-radius;
+      content: '';
+      height: $toggle-height - 4px;
+      left: 2px;
+      position: absolute;
+      top: 2px;
+      transition: transform 0.2s;
+      width: $toggle-height - 4px;
+    }
+  }
+}
