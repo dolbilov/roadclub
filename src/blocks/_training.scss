@@ -1,0 +1,55 @@
+@import "../abstracts/variables";
+
+.training {
+  padding-top: 150px;
+  padding-bottom: 120px;
+  background-color: var(--primary-background);
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 460px);
+    grid-template-rows: 110px 322px 28px;
+    column-gap: 160px;
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0;
+    font-family: $font-stack;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--secondary-text);
+    opacity: $secondary-text-opacity;
+    max-width: 460px;
+  }
+
+  &__apps {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    grid-row: 3 / -1;
+    grid-column: 1;
+  }
+
+  &__app-link {
+    font-family: $font-stack;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--primary-text);
+    text-decoration: none;
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover {
+      opacity: var(--hover-opacity);
+    }
+  }
+
+  &__image {
+    width: 580px;
+    height: 460px;
+  }
+}
