@@ -2,10 +2,12 @@
   box-sizing: border-box;
   margin: 0 auto;
   max-width: 1440px;
-  padding: 0 120px;
+  padding-left: 120px;
+  padding-right: 120px;
   width: 100%;
 
   @media screen and (max-width: $mobile-breakpoint) {
-    padding: 0 18px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 }
