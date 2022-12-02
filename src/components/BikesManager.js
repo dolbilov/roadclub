@@ -46,8 +46,6 @@ export default class BikesManager {
     ]
   ];
 
-
-
   _showCards(cardsToShow) {
     for (let i = 0; i < cardsToShow.length; i++) {
       const card = constants.bikesCards[i];
@@ -60,9 +58,19 @@ export default class BikesManager {
     }
   }
 
+  _setActiveElement(newActiveElement) {
+    // remove temp active class
+    const activeElement = constants.bikesMenu.querySelector(`.${constants.activeBikesMenuElementClass}`);
+    activeElement.classList.remove(constants.activeBikesMenuElementClass);
+
+    // set active class to the new active element
+    newActiveElement.classList.add(constants.activeBikesMenuElementClass);
+  }
+
   setEventListeners() {
     for (let i = 0; i < constants.bikesMenuItems.length; i++) {
       constants.bikesMenuItems[i].addEventListener("click", () => {
+        this._setActiveElement(constants.bikesMenuItems[i]);
         this._showCards(BikesManager.cards[i]);
       });
     }
