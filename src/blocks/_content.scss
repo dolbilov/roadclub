@@ -1,0 +1,13 @@
+.content {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding-left: 120px;
+  padding-right: 120px;
+  width: 100%;
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
